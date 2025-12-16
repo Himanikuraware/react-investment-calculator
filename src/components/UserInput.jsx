@@ -1,27 +1,49 @@
-const UserInput = () => {
+const UserInput = ({ userInput, handleChange }) => {
   return (
-    <div id="user-input">
+    <section id="user-input">
       <div className="input-group">
-        <div>
-          <label htmlFor="initial-investment">Initial Investment</label>
-          <input id="initial-investment" type="text" />
-        </div>
-        <div>
-          <label htmlFor="annual-investment">Annual Investment</label>
-          <input id="annual-investment" type="text" />
-        </div>
+        <p>
+          <label htmlFor="initialInvestment">Initial Investment</label>
+          <input
+            id="initialInvestment"
+            type="number"
+            value={userInput.initialInvestment}
+            onChange={handleChange}
+          />
+        </p>
+        <p>
+          <label htmlFor="annualInvestment">Annual Investment</label>
+          <input
+            id="annualInvestment"
+            type="number"
+            value={userInput.annualInvestment}
+            onChange={handleChange}
+          />
+        </p>
       </div>
       <div className="input-group">
-        <div>
-          <label htmlFor="expected-return">Expected Return</label>
-          <input id="expected-return" type="text" />
-        </div>
-        <div>
+        <p>
+          <label htmlFor="expectedReturn">Expected Return</label>
+          <input
+            id="expectedReturn"
+            type="number"
+            value={userInput.expectedReturn}
+            onChange={handleChange}
+          />
+        </p>
+        <p>
           <label htmlFor="duration">Duration (Years)</label>
-          <input id="duration" type="number" />
-        </div>
+          <input
+            id="duration"
+            type="number"
+            value={userInput.duration}
+            onChange={handleChange}
+            min="1"
+            step="1"
+          />
+        </p>
       </div>
-    </div>
+    </section>
   );
 };
 
